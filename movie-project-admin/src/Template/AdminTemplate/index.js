@@ -25,8 +25,8 @@ export const AdminTemplate = (props) => {
                                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i className="bi bi-person-fill" />
                                     </a>
-                                    <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a className="dropdown-item">Sign up</a></li>
+                                    <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        <li><a className="dropdown-item text-up">Sign up</a></li>
                                     </ul>
                                 </li>
                             </ul>
