@@ -9,7 +9,8 @@ export const AdminTemplate = (props) => {
         return (
             <Fragment>
                 <div>
-                    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                        {/* fixed-top */}
                         <div className="container-fluid">
                             <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="offcanvasExample">
                                 <span className="navbar-toggler-icon" data-bs-target="#sidebar" />
@@ -43,10 +44,8 @@ export const AdminTemplate = (props) => {
                                         </div>
                                     </li>
                                     <li>
-                                        <a className="nav-link px-3 active">
                                             <span className="me-2"><i className="bi bi-speedometer2" /></span>
                                             <span className="bg-color">Dashboard</span>
-                                        </a>
                                     </li>
                                     <li className="my-4">
                                         <hr className="dropdown-divider bg-light" />
@@ -57,10 +56,9 @@ export const AdminTemplate = (props) => {
                                         </div>
                                     </li>
                                     <li>
-                                        <a className="nav-link px-3 sidebar-link">
                                             <span className="me-2"><i className="bi bi-layout-split" /></span>
                                             <NavLink className="bg-color-1" to="/admin/users">User</NavLink>
-                                        </a>
+
                                     </li>
                                     <li className="my-4">
                                         <hr className="dropdown-divider bg-light" />
@@ -71,10 +69,9 @@ export const AdminTemplate = (props) => {
                                         </div>
                                     </li>
                                     <li>
-                                        <a className="nav-link px-3">
+                                     
                                             <span className="me-2"><i className="bi bi-film" /></span>
                                             <NavLink className="bg-color-1" to="/admin/films">Movie</NavLink>
-                                        </a>
                                     </li>
                                 </ul>
                             </nav>
