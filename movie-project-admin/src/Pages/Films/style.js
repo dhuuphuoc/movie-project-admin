@@ -27,7 +27,11 @@ const useStyle = makeStyles((theme)=>{
         pagination:{
             display:"flex",
             justifyContent:"flex-end",
-            margin:"15px 0",
+            margin:"20px 0 !important",
+        },
+        marginTitle:{
+            marginTop:"115px !important",
+            marginBottom:30
         }
     }
 })
