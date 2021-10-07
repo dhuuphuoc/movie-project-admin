@@ -15,8 +15,6 @@ export const AdminTemplate = (props) => {
         return <Redirect to='/signin'/>
     }
   
-    
-
     const { Component, ...restRoute } = props;
     return <Route {...restRoute} render={(propsRoute) => {
         return (

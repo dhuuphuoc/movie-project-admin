@@ -12,12 +12,13 @@ import {
     Button,
 } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchFilmList, xoaPhim } from "../../Redux/action/QuanLyFilmsAction";
+import { fetchFilmList, layDanhSachPhim, xoaPhim } from "../../Redux/action/QuanLyFilmsAction";
 import { Add, Delete, Edit } from "@material-ui/icons";
 import useStyle from "./style";
 import { Pagination } from "@material-ui/lab";
 import { SET_PAGE } from "../../Redux/type/QuanLyPhimType";
 import { NavLink } from "react-router-dom";
+import { Input } from "antd";
 
 
 function Films() {
@@ -45,6 +46,11 @@ function Films() {
             }
         }
     }
+    const {Search} = Input
+    const onSearch = (value) =>{
+        console.log(value)
+        dispatch(fetchFilmList(value))
+    }
 
     return (
         <Container maxWidth="lg">
@@ -56,7 +62,15 @@ function Films() {
                     Add Movie
                 </NavLink>
             </div>
+            <Search
+                className="mb-4"
+                placeholder="Input Search"
+                enterButton="Search"
+                size="large"
+                onSearch={onSearch}
+            />
             <TableContainer component={Paper}>
+                
                 <Table aria-label="simple table">
                     <TableHead>
                         <TableRow>
@@ -75,8 +89,9 @@ function Films() {
                                     <TableCell align="center"><img src={movie.hinhAnh} style={{width:60, height:60}}/></TableCell>
                                     <TableCell align="center">{movie.tenPhim}</TableCell>
                                     <TableCell align="center">{movie.moTa.length > 50 ? movie.moTa.slice(0,50) + '...': movie.moTa}</TableCell>
-                                    <TableCell align="right">
+                                    <TableCell align="cennter" style={{textAlign:"center"}}>
                                         <NavLink component={Button} to={`/admin/films/editfilms/${movie.maPhim}`} className={classes.buttonEdit}  variant="contained" startIcon={<Edit/>}>Edit</NavLink>
+                                        <NavLink component={Button} to={`/admin/films/showtime/${movie.maPhim}`} className={classes.buttonEdit} variant="contained" startIcon={<Edit />}>Time</NavLink>
                                         <Button className={classes.buttonDelete} variant="contained" startIcon={<Delete/>} onClick={handleDelete(movie)}>Delete</Button>
                                     </TableCell>
                                     </TableRow>
@@ -94,4 +109,4 @@ function Films() {
     );
 }
 
-export default memo(Films);
+export default Films;

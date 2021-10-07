@@ -9,11 +9,13 @@ const useStyle = makeStyles((theme)=>{
             "&:hover": {
                 backgroundColor: "#FF0033",
             },
-            marginLeft: 8,
+            marginBottom: 8,
         },
         buttonEdit : {
             backgroundColor: "#3366FF",
             color: "white",
+            marginRight:8,
+            marginBottom:8,
             "&:hover": {
                 backgroundColor: "#3300FF",
                 color: "white"

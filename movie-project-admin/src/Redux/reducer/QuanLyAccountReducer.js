@@ -15,8 +15,8 @@ const QuanLyAccountReducer = (state = stateDefault, action) =>{
     switch(action.type){
         case DANG_NHAP_ACTION:{
             localStorage.setItem(ADMIN_LOGIN,JSON.stringify(action.payload))
-            localStorage.setItem('accessToken', action.payload.accessToken)
-            state.adminSignin = user
+            localStorage.setItem('t', action.payload.accessToken)
+            state.adminSignin = action.payload
             return { ...state }
         }
 

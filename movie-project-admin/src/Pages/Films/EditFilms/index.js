@@ -5,6 +5,7 @@ import { Container, Typography, Button } from '@material-ui/core'
 import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
 import { capNhapPhim, layThongTinPhim } from '../../../Redux/action/QuanLyFilmsAction';
+import './style.css'
 
 export default function EditFilms(props) {
     const [componentSize, setComponentSize] = useState('default');
@@ -96,41 +97,50 @@ export default function EditFilms(props) {
                 onValuesChange={onFormLayoutChange}
                 size={componentSize}
             >
-                <Typography className="mt-5 mb-5" component="h2" variant="h4" align="center">Chỉnh sữa phim</Typography>
-                <Form.Item label="Ten Phim">
+                <Typography className="mb-5" component="h2" variant="h4" align="center">Chỉnh sữa phim</Typography>
+                <Form.Item label="Tên phim"
+                    style={{ fontWeight: 700 }}>
                     <Input name="tenPhim" onChange={formik.handleChange} value={formik.values.tenPhim} />
                 </Form.Item>
 
-                <Form.Item label="Trailer">
+                <Form.Item label="Trailer"
+                    style={{ fontWeight: 700 }}>
                     <Input name="trailer" onChange={formik.handleChange} value={formik.values.trailer}/>
                 </Form.Item>
 
-                <Form.Item label="Mo ta">
+                <Form.Item label="Mô tả"
+                    style={{ fontWeight: 700 }}>
                     <Input name="moTa" onChange={formik.handleChange} value={formik.values.moTa} />
                 </Form.Item>
 
-                <Form.Item label="Ngay khoi chieu">
+                <Form.Item label="Ngày khởi chiêu"
+                    style={{ fontWeight: 700 }}>
                     <DatePicker name="ngayKhoiChieu" format={'DD/MM/YYYY'} onChange={handleChangeNgayChieu} value={moment(formik.values.ngayKhoiChieu)} />
                 </Form.Item>
 
-                <Form.Item label="Dang chieu">
+                <Form.Item label="Đang chiếu"
+                    style={{ fontWeight: 700 }}>
                     <Switch name="dangChieu" onChange={handleChangeSwitch('dangChieu')} checked={formik.values.dangChieu} />
                 </Form.Item>
 
-                <Form.Item label="Sap chieu" >
+                <Form.Item label="Sắp chiếu"
+                    style={{ fontWeight: 700 }} >
                     <Switch name="sapChieu" onChange={handleChangeSwitch('sapChieu')} checked={formik.values.sapChieu} />
                 </Form.Item>
-                <Form.Item label="Hot"  >
+                <Form.Item label="Hot"
+                    style={{ fontWeight: 700 }} >
                     <Switch name="hot" onChange={handleChangeSwitch('hot')} checked={formik.values.hot}/>
                 </Form.Item>
 
-                <Form.Item label="Danh gia">
+                <Form.Item label="Đánh giá"
+                    style={{ fontWeight: 700 }}>
                     <InputNumber onChange={handleChangeNumber('danhGia')} min={1}
                         max={10}
                         value={formik.values.danhGia} />
                 </Form.Item>
 
-                <Form.Item label="Hinh anh">
+                <Form.Item label="Hình ảnh"
+                    style={{ fontWeight: 700 }}>
                     <input type="file" onChange={handleChangeFile} />
                     <br />
                     <img style={{ width: 150, height: 150 }} src={img === '' ? thongTinPhim.hinhAnh : img}/>

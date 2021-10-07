@@ -4,6 +4,7 @@ import Dashboard from "./Pages/Dashboard";
 import Films from "./Pages/Films";
 import AddFilms from "./Pages/Films/AddFilms";
 import EditFilms from "./Pages/Films/EditFilms";
+import ShowTime from "./Pages/ShowTime";
 import Signin from "./Pages/Signin";
 import Users from "./Pages/Users";
 import { AdminTemplate } from "./Template/AdminTemplate";
@@ -23,6 +24,7 @@ function App() {
         <AdminTemplate path="/admin/films" exact Component={Films} />
         <AdminTemplate path="/admin/films/addfilms" exact Component ={AddFilms}/>
         <AdminTemplate path="/admin/films/editfilms/:id" exact Component={EditFilms} />
+        <AdminTemplate path="/admin/films/showtime/:id" exact Component={ShowTime} />
         <SigninTemplate path="/signin" exact Component={Signin}/>
         </Switch>
     </Router>
