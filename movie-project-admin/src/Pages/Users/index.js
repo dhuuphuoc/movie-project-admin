@@ -73,11 +73,12 @@ function Users() {
         <Table aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell align="center">Số thứ tự</TableCell>
+              <TableCell align="center">STT</TableCell>
+              <TableCell align="center">Tài khoản</TableCell>
               <TableCell align="center">Họ tên</TableCell>
               <TableCell align="center">Email</TableCell>
               <TableCell align="center">Số điện thoại</TableCell>
-              <TableCell align="center"></TableCell>
+              <TableCell align="center">Thao tác</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -91,29 +92,26 @@ function Users() {
                       component="th"
                       scope="row"
                     >
-                      {index}
+                      {index + 1}
                     </TableCell>
+                    <TableCell align="center">{user.taiKhoan}</TableCell>
                     <TableCell align="center">{user.hoTen}</TableCell>
                     <TableCell align="center">{user.email}</TableCell>
                     <TableCell align="center">{user.soDt}</TableCell>
                     <TableCell align="cennter" style={{ textAlign: "center" }}>
                       <NavLink
                         component={Button}
-                        to={``}
+                        to={`/admin/films/editUser/${user.taiKhoan}`}
                         className={classes.buttonEdit}
                         variant="contained"
-                        startIcon={<Edit />}
-                      >
-                        Edit
-                      </NavLink>
+                        startIcon={<Edit style={{ marginRight: "0" }} />}
+                      ></NavLink>
                       <Button
                         className={classes.buttonDelete}
                         variant="contained"
-                        startIcon={<Delete />}
+                        startIcon={<Delete style={{ marginRight: "0" }} />}
                         onClick={handleDelete(user)}
-                      >
-                        Delete
-                      </Button>
+                      ></Button>
                     </TableCell>
                   </TableRow>
                 );

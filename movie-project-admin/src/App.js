@@ -8,6 +8,7 @@ import ShowTime from "./Pages/ShowTime";
 import Signin from "./Pages/Signin";
 import Users from "./Pages/Users";
 import AddUser from "./Pages/Users/AddUser";
+import EditUser from "./Pages/Users/EditUser";
 import { AdminTemplate } from "./Template/AdminTemplate";
 import { SigninTemplate } from "./Template/SignTemplate";
 
@@ -37,6 +38,11 @@ function App() {
           Component={ShowTime}
         />
         <AdminTemplate path="/admin/films/addUser" exact Component={AddUser} />
+        <AdminTemplate
+          path="/admin/films/editUser/:id"
+          exact
+          Component={EditUser}
+        />
         <SigninTemplate path="/signin" exact Component={Signin} />
       </Switch>
     </Router>
